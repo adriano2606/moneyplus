@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conectando API</title>
+        <link rel="stylesheet" href="style.css">
+    </header>
+    <body>
+        <header>
+            <div class="logo">Money<span class="text-highlight">+</span></div>
+            <div class="menu">
+                <ul class="menu-links">
+                    <li>Sobre nós</li>
+                    <li>FAQ</li>
+                    <li>Política</li>
+                </ul>
+                <ul class="menu-buttons">
+                    <li><a href="" class="btn-nobg">Login</a></li>
+                    <li><a href="" class="btn-bg">Registrar</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <div class="hero">
+            <div class="hero-texto">
+                <h1>Envie dinheiro para outro país de forma <span class="text-highlight">segura</span> e <span class="text-highlight">rápida</span>.</h1>
+            </div>
+            <div class="hero-cotacao">
+                <div class="box">
+                    <h2>Simular cotação</h2>
+                    <div class="box-content">
+                        <div class="box-line">
+                            <label for="">Enviar:</label>
+                            <div class="box-fields">
+                                <select name="selecione" id="">
+                                    <option value="brl">BRL</option>
+                                </select>
+                                <input type="number" name="" id="valor-enviar" placeholder="Digite o valor..." oninput="calcularCotacao()">
+                            </div>
+                        </div>
+                        <div id="cotacao-info">
+                        </div>
+                        <div class="box-line">
+                            <label for="">Total a receber:</label>
+                            <div class="box-fields">
+                                <select name="selecione" id="receber-options" onchange="calcularCotacao()">
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="CAD">CAD</option>
+                                </select>
+                                <input type="number" name="" id="valor-receber">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+    </body>
+</html>
