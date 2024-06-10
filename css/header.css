@@ -1,0 +1,36 @@
+header{
+    width: 100vw;
+    padding: 5vmin 10vmin;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    flex-wrap: wrap;
+    gap: 2.8vmax;
+    position: fixed;
+}
+
+.logo{
+    font-size: 3vmax;
+    font-weight: 500;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vmax;
+    justify-content: center;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+@media (max-width: 802px){
+    header{
+        justify-content: center;
+    }
+}

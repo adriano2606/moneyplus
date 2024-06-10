@@ -1,0 +1,141 @@
+.hero{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10vmin;
+    color: white;
+    gap: 5vmax;
+    background: linear-gradient(97deg, rgba(12,75,84,1) 1%, rgba(62,114,81,1) 28%, rgba(89,135,80,1) 58%, rgba(124,162,78,1) 84%, rgba(151,183,77,1) 91%, rgba(179,205,75,1) 97%, rgba(232,246,73,1) 100%);
+    height: 100vh;
+}
+
+.hero-texto{
+    display: flex;
+    align-items: center;
+}
+
+.hero-cotacao{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.hero-maintxt{
+    font-size: 3vmax;
+    font-weight: 600;
+}
+
+.box{
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 5vmin 5vmin;
+    max-width: 70%;
+ }
+
+.box h2{
+    font-size: 1.7vmax;
+    font-weight: 600;
+    color: var(--color-yellow);
+}
+
+.box-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 3vmax;
+
+}
+.box-line select, .box-line option, .box-line input{
+    height: 3.5vmax;
+    font-size: 2vmin;
+}
+
+ .box-line select, .box-line option {
+    padding: 0 1vmin;
+    border: 1px solid gray;
+    font-weight: 600;
+    color: var(--color-darkgreen);
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+} 
+
+.box-line input{
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    border: 1px solid grey;
+    padding: 0 2rem;
+    font-size: 1.5vmax;
+    color: var(--color-darkgreen);
+    width: 100%;
+}
+
+.box-line{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.box-fields{
+    display: flex;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#cotacao-info{
+    display: none;
+}
+
+@media (max-width: 802px){
+
+    .hero{
+        grid-template-columns: 1fr;
+    }
+
+    .hero-texto{
+         text-align: center;
+         align-items: end;    
+    }
+
+    .hero-cotacao{
+        align-items: start;
+    }
+
+    .box{
+        margin: 0px;
+        width: 100%;
+        height: 70%;
+    }
+
+    .box-line select, .box-line option, .box-line input{
+        height: 5vmax;
+        font-size: 3vmin;
+    }
+
+    .box h2{
+        font-size: 2.5vmax;
+    }
+
+    .hero-maintxt{
+        font-size: 3.3vmax;
+    }
+}
+
+@media (max-width: 1400px){
+    .box{
+        max-width: 100%;
+    }
+}

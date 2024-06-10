@@ -5,14 +5,12 @@ var cad
 async function getAPI(){
     var response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_v5q6F12DfvkfVkP9G6G50yDxLBxvo2iLuLYjaF9x&currencies=EUR%2CUSD%2CCAD&base_currency=BRL')
     var data = await (await response.json()).data
-    console.log(data)
     dolar = 1/(data.USD)
     euro = 1/(data.EUR)
     cad = 1/(data.CAD)
 }
 
 getAPI()
-
 
 const valorEnviar = document.getElementById("valor-enviar")
 const valorReceber = document.getElementById("valor-receber")
@@ -22,7 +20,6 @@ const areaCotacao = document.getElementById("cotacao-info")
 const valorCotacao = document.getElementById("valor-cotacao")
 
 async function calcularCotacao(){
-
 
     option = moedaSelecionada.value
     areaCotacao.style.display = 'flex';
