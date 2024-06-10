@@ -12,40 +12,60 @@ async function getAPI(){
 
 getAPI()
 
-const valorEnviar = document.getElementById("valor-enviar")
-const valorReceber = document.getElementById("valor-receber")
+var valorEnviar = document.getElementById("valor-enviar")
+var valorReceber = document.getElementById("valor-receber")
 var moedaSelecionada = document.getElementById("receber-options")
-var option
 const areaCotacao = document.getElementById("cotacao-info")
-const valorCotacao = document.getElementById("valor-cotacao")
 const flag = document.getElementsByClassName('country')[1]
+
+function exibirImgPais(moedaAtual){
+    if (moedaAtual == "USD") {
+        flag.classList.remove('ca', 'eu')
+        flag.classList.add("us")
+    } else if (moedaAtual == "EUR"){
+        flag.classList.remove('ca', 'us')
+        flag.classList.add("eu")
+    } else if(moedaAtual == "CAD"){
+        flag.classList.remove("us", "eu")
+        flag.classList.add("ca")
+    }
+}
+
+function exibirCotacao(moeda){
+    areaCotacao.style.display = 'flex';
+    areaCotacao.style.gap = '1rem'; 
+    if (moeda == "USD"){
+    areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
+                                <p id="valor-cotacao">${moeda + " " + dolar.toFixed(2)}</p>`
+    } else if (moeda == "EUR"){
+            areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
+                                <p id="valor-cotacao">${moeda + " " + euro.toFixed(2)}</p>`
+    } else if (moeda == "CAD"){
+                    areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
+                                <p id="valor-cotacao">${moeda + " " + cad.toFixed(2)}</p>`
+    }
+}
+
+function exibirValoReceber(moeda){
+    valorReceber.value = Number(valorEnviar.value / moeda).toFixed(1)
+}
 
 function calcularCotacao(){
 
-    option = moedaSelecionada.value
-    areaCotacao.style.display = 'flex';
-    areaCotacao.style.gap = '1rem'; 
+    var option = moedaSelecionada.value
 
     if (option == "USD"){
-        valorReceber.value = (valorEnviar.value / dolar).toFixed(2)
-        areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
-                            <p id="valor-cotacao">${option + " " + dolar.toFixed(2)}</p>`
-                            flag.classList.remove('ca', 'eu')
-                            flag.classList.add("us")
-        
+        exibirCotacao(option)
+        exibirValoReceber(dolar)
+        exibirImgPais(option)                  
     } else if (option == "EUR"){
-        valorReceber.value = (valorEnviar.value / euro).toFixed(2)
-        areaCotacao.innerHTML =  `<p><span class="text-highlight">Cotação:</span></p>
-                            <p id="valor-cotacao">${option + " " + euro.toFixed(2)}</p>`
-                            flag.classList.remove("us", "ca")
-      flag.classList.add("eu")
+        exibirCotacao(option)
+        exibirValoReceber(euro)
+        exibirImgPais(option) 
     } else if (option == "CAD"){
-        valorReceber.value = (valorEnviar.value / cad).toFixed(2)
-        areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
-                            <p id="valor-cotacao">${option + " " + cad.toFixed(2)}</p>`
-                            flag.classList.remove("us", "eu")
-                            flag.classList.add("ca")
-
+        exibirCotacao(option)
+        exibirValoReceber(cad)
+        exibirImgPais(option) 
     }
 }
 
@@ -57,7 +77,6 @@ document.addEventListener('scroll', () => {
     } else {
         header.classList.remove('non-transparent')
     }
-
 })
 
 
