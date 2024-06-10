@@ -6,7 +6,8 @@
     color: white;
     gap: 5vmax;
     background: linear-gradient(97deg, rgba(12,75,84,1) 1%, rgba(62,114,81,1) 28%, rgba(89,135,80,1) 58%, rgba(124,162,78,1) 84%, rgba(151,183,77,1) 91%, rgba(179,205,75,1) 97%, rgba(232,246,73,1) 100%);
-    height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
 }
 
 .hero-texto{
