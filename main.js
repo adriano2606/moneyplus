@@ -26,15 +26,15 @@ async function calcularCotacao(){
     areaCotacao.style.gap = '1rem'; 
 
     if (option == "USD"){
-        valorReceber.value = (valorEnviar.value * dolar).toFixed(2)
+        valorReceber.value = (valorEnviar.value / dolar).toFixed(2)
         areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
                             <p id="valor-cotacao">${option + " " + dolar.toFixed(2)}</p>`
     } else if (option == "EUR"){
-        valorReceber.value = (valorEnviar.value * euro).toFixed(2)
+        valorReceber.value = (valorEnviar.value / euro).toFixed(2)
         areaCotacao.innerHTML =  `<p><span class="text-highlight">Cotação:</span></p>
                             <p id="valor-cotacao">${option + " " + euro.toFixed(2)}</p>`
     } else if (option == "CAD"){
-        valorReceber.value = (valorEnviar.value * cad).toFixed(2)
+        valorReceber.value = (valorEnviar.value / cad).toFixed(2)
         areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
                             <p id="valor-cotacao">${option + " " + cad.toFixed(2)}</p>`
     }
