@@ -18,8 +18,9 @@ var moedaSelecionada = document.getElementById("receber-options")
 var option
 const areaCotacao = document.getElementById("cotacao-info")
 const valorCotacao = document.getElementById("valor-cotacao")
+const flag = document.getElementsByClassName('country')[1]
 
-async function calcularCotacao(){
+function calcularCotacao(){
 
     option = moedaSelecionada.value
     areaCotacao.style.display = 'flex';
@@ -29,14 +30,22 @@ async function calcularCotacao(){
         valorReceber.value = (valorEnviar.value / dolar).toFixed(2)
         areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
                             <p id="valor-cotacao">${option + " " + dolar.toFixed(2)}</p>`
+                            flag.classList.remove('ca', 'eu')
+                            flag.classList.add("us")
+        
     } else if (option == "EUR"){
         valorReceber.value = (valorEnviar.value / euro).toFixed(2)
         areaCotacao.innerHTML =  `<p><span class="text-highlight">Cotação:</span></p>
                             <p id="valor-cotacao">${option + " " + euro.toFixed(2)}</p>`
+                            flag.classList.remove("us", "ca")
+      flag.classList.add("eu")
     } else if (option == "CAD"){
         valorReceber.value = (valorEnviar.value / cad).toFixed(2)
         areaCotacao.innerHTML = `<p><span class="text-highlight">Cotação:</span></p>
                             <p id="valor-cotacao">${option + " " + cad.toFixed(2)}</p>`
+                            flag.classList.remove("us", "eu")
+                            flag.classList.add("ca")
+
     }
 }
 

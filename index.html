@@ -36,23 +36,32 @@
                         <div class="box-line">
                             <label for="">Enviar:</label>
                             <div class="box-fields">
-                                <select name="selecione" id="">
-                                    <option value="brl">BRL</option>
-                                </select>
-                                <input type="number" name="" id="valor-enviar" placeholder="Digite o valor..." oninput="calcularCotacao()">
-                            </div>
+                                <div class="country br">
+                                </div>
+                                <div class="campos">
+                                    <select name="selecione" id="">
+                                        <option value="brl">BRL</option>
+                                    </select>
+                                    <input type="number" name="" id="valor-enviar" placeholder="Digite o valor..." oninput="calcularCotacao()">
+                                                                </div>
+                                </div>
                         </div>
                         <div id="cotacao-info">
                         </div>
                         <div class="box-line">
                             <label for="">Total a receber:</label>
                             <div class="box-fields">
-                                <select name="selecione" id="receber-options" onchange="calcularCotacao()">
-                                    <option value="USD">USD</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="CAD">CAD</option>
-                                </select>
-                                <input readonly="readonly" type="number" name="" id="valor-receber">
+                                <div class="country us">
+                                </div>
+                                <div class="campos">
+                                    <select name="selecione" id="receber-options" onchange="calcularCotacao()">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="CAD">CAD</option>
+                                    </select>
+                                    <input readonly="readonly" type="number" name="" id="valor-receber">
+                                </div>
+                            
                             </div>
                         </div>
                     </div>
