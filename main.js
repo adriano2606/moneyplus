@@ -40,4 +40,16 @@ async function calcularCotacao(){
     }
 }
 
+document.addEventListener('scroll', () => {
+    const header  = document.getElementsByTagName("header")[0]
+    
+    if (window.scrollY > 0){
+        header.classList.add('non-transparent')
+    } else {
+        header.classList.remove('non-transparent')
+    }
+
+})
+
+
 

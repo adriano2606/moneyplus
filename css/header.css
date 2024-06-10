@@ -34,3 +34,7 @@ header{
         justify-content: center;
     }
 }
+
+.non-transparent{
+    background-color: rgba(12, 75, 84, 1)
+}
